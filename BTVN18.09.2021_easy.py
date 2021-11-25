@@ -3,20 +3,34 @@
 # Tính số ngày mà team test có để test sản phẩm (= release_date - code_complete_day). 
 # Lưu ý, ngày release sản phẩm sẽ ở định dạng 19/12/2021 còn ngày code_complete có định dạng 2021-17-05
 
-from datetime import date
-from datetime import time
-from datetime import datetime
-import datetime
-date_release = "23/08/2021"
-date_complete = "2021/15/09"
-def day_diff(date_release, date_complete):
-    d1=datetime.datetime.strptime(date_release,"%d/%m/%Y")
-    print("Ngay release:",d1)
-    d2 = datetime.datetime.strptime(date_complete,"%Y-%d-%m")
-    print ("Ngày complete:",d2)
-    print ("So ngay co the test duoc sp la:",d1-d2)
+# from datetime import date
+# from datetime import time
+# from datetime import datetime
 
-day_diff(date_release, date_complete)
+# release_date = "23/08/2021"
+# code_complete_day = "2021-15-09"
+# def day_diff(release_date, code_complete_day):
+#      convert_release_time = datetime.strptime(release_date, "%d/%m/%Y")
+#      print("Ngày release:",convert_release_time)
+#      convert_code_complete_day = datetime.strptime(code_complete_day, "%Y-%d-%m")
+#      print ("Ngày complete:",convert_code_complete_day)
+#      number_time = convert_code_complete_day - convert_release_time
+#      print ("Số ngày có thể test được sản phẩm là:",number_time)
+#      return number_time.days
+# day_diff(release_date, code_complete_day)
+
+
+
+# def day_diff(date_release, date_complete):
+#     d1=datetime.datetime.strptime(date_release,"%d/%m/%Y")
+#     print("Ngày release:",d1)
+#     d2 = datetime.datetime.strptime(date_complete,"%Y-%d-%m")
+#     print ("Ngày complete:",d2)
+#     print ("Số ngày có thể test được sản phẩm là:",d1-d2)
+
+# day_diff(date_release, date_complete)
+
+
 
 # Bài 2:
 # Viết hàm alpha_num() tìm tất cả những từ trong một câu 
@@ -27,15 +41,20 @@ day_diff(date_release, date_complete)
 
 
 str= "Emma25 is Data scientist50 and AI Expert"
-print("chuoi la: ",str)
-def chu_so(s):
-    s_list_chu_so = []
-    s_list = str.split()
-    print(s_list)
-    for tu in s_list:
-        if tu.isalpha()!=True and tu.isdecimal()!=True:
-            s_list_chu_so.append(tu)
-        else:
-            continue  
-    print("tu can tim trong chuoi tren la:",s_list_chu_so)
-chu_so(str)
+print("chuỗi là: ",str)
+def alpha_num(sentence):
+    list_words = []
+    words = sentence.strip().split()
+    for i in words:
+        is_text = False
+        is_number = False
+        for j in i:
+            if j.isalpha():
+                is_text = True
+            elif j.isnumeric():
+                is_number= True
+            if is_text and is_number:
+                list_words.append(i)
+                break
+    return list_words
+alpha_num(str)  
