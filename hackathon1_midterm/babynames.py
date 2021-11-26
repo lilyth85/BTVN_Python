@@ -43,22 +43,18 @@ def extract_names(filename):
         return (sorted(list_result,reverse=False))    
 def main():
   # Chương trình này có thể nhận đối số đầu vào là một hoặc nhiều tên file
-  lis1=extract_names("summaryfile.txt")
-  print(lis1)
-  for i in lis1:
-    print(i)
-  # args = sys.argv[1:]
-  # if not args:
-  #   print('usage: [--summaryfile] file [file ...]')
-  #   sys.exit(1)
-  # # Notice the summary flag and remove it from args if it is present.
-  # summary = False
-  # if args[0] == '--summaryfile':
-  #   summary = True
-  #   del args[0]
+  args = sys.argv[1:]
+  if not args:
+    print('usage: [--summaryfile] file [file ...]')
+    sys.exit(1)
+  # Notice the summary flag and remove it from args if it is present.
+  summary = False
+  if args[0] == '--summaryfile':
+    summary = True
+    del args[0]
   # +++your code here+++
   # Với mỗi tên file, gọi hàm extract_names ở trên và in kết quả ra stdout
   # hoặc viết kết quả ra file summary (nếu có input --summaryfile).
 if __name__ == '__main__':
   main()
-  ##extract_names('baby2008.html')
+  extract_names('baby2008.html')

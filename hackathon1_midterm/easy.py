@@ -27,7 +27,7 @@ def alpha_num(sentence):
             if j.isalpha():
                 is_text = True
             elif j.isnumeric():
-                is_number= True
+                is_number = True
             if is_text and is_number:
                 list_words.append(i)
                 break
