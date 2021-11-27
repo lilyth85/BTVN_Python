@@ -1,5 +1,6 @@
-**Hướng dẫn chung.
-**
+Hướng dẫn chung.
+
+
 Code phần Easy trong file easy.py
 
 Code phần Medium trong file medium.py
